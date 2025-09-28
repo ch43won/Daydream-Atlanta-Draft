@@ -74,8 +74,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_agjl5"]
-radius = 35.25
-height = 100.0
+radius = 30.25
+height = 98.0
 
 [node name="player2" type="CharacterBody2D"]
 z_index = 5
@@ -90,5 +90,5 @@ frame = 3
 frame_progress = 0.0830582
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.25, -57)
+position = Vector2(-2, -56)
 shape = SubResource("CapsuleShape2D_agjl5")
