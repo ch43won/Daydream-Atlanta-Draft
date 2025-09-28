@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqm3i00s24o8q"]
+
+[ext_resource type="Script" uid="uid://c1xflw6dugwea" path="res://scripts/player_2_ending.gd" id="1_3dufm"]
+[ext_resource type="Texture2D" uid="uid://1361mqvhfwat" path="res://assets/joonghyuklives.png" id="2_bpn0m"]
+[ext_resource type="Texture2D" uid="uid://75o5gnlnema" path="res://buttons/CGB02-purple_S_btn.png" id="3_p462y"]
+[ext_resource type="Texture2D" uid="uid://btlm00ghoco4n" path="res://buttons/CGB02-grey_S_btn.png" id="4_7uwa7"]
+[ext_resource type="Texture2D" uid="uid://dajis3tksptql" path="res://buttons/purple_small_hover.png" id="5_gi2p8"]
+[ext_resource type="FontFile" uid="uid://bi5h638hf5nrv" path="res://buttons/monogram.ttf" id="6_rjl3f"]
+[ext_resource type="PackedScene" uid="uid://c3i8towvtocwe" path="res://scenes/fade_transition.tscn" id="7_7uwa7"]
+[ext_resource type="AudioStream" uid="uid://rr4cvid55mg2" path="res://audio/lost without you.mp3" id="8_gi2p8"]
+
+[node name="player2 ending" type="Node2D"]
+rotation = -0.00872665
+script = ExtResource("1_3dufm")
+
+[node name="Joonghyuklives" type="Sprite2D" parent="."]
+position = Vector2(63.3118, -35.4489)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_bpn0m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="back" type="TextureButton" parent="."]
+offset_left = -411.459
+offset_top = 165.416
+offset_right = 100.541
+offset_bottom = 305.416
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("3_p462y")
+texture_pressed = ExtResource("4_7uwa7")
+texture_hover = ExtResource("5_gi2p8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2118
+anchor_top = 0.0909169
+anchor_right = -0.2118
+anchor_bottom = 0.0909169
+offset_left = 126.0
+offset_top = -1.0
+offset_right = 389.0
+offset_bottom = 111.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("6_rjl3f")
+theme_override_font_sizes/font_size = 140
+text = "<-"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fade_transition" parent="." instance=ExtResource("7_7uwa7")]
+visible = false
+offset_left = -1277.78
+offset_top = -921.111
+offset_right = 1919.22
+offset_bottom = 1461.89
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 99.0
+offset_top = -324.0
+offset_right = 1412.0
+offset_bottom = -125.0
+theme_override_colors/font_color = Color(1, 1, 0.92549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("6_rjl3f")
+theme_override_font_sizes/font_size = 100
+text = "The End"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gi2p8")
+autoplay = true
+parameters/looping = false

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xhm74q6x0x5"]
+
+[ext_resource type="Texture2D" uid="uid://cwwx2ij00vd2n" path="res://assets/train-removebg-preview.png" id="1_68jl8"]
+[ext_resource type="Script" uid="uid://b1ea42p44fbkx" path="res://scripts/train.gd" id="1_d43s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d43s7"]
+size = Vector2(172, 80)
+
+[node name="Train" type="Area2D"]
+script = ExtResource("1_d43s7")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(-182, 3)
+texture = ExtResource("1_68jl8")
+region_enabled = true
+region_rect = Rect2(137, 355, 227, 85)
+
+[node name="body2" type="Sprite2D" parent="."]
+texture = ExtResource("1_68jl8")
+region_enabled = true
+region_rect = Rect2(137, 270, 227, 87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(28, 1)
+shape = SubResource("RectangleShape2D_d43s7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

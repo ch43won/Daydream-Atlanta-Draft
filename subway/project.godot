@@ -11,9 +11,20 @@ config_version=5
 [application]
 
 config/name="Subway"
-run/main_scene="uid://2krg0vg6hhmf"
+run/main_scene="uid://c2u7ta45ik7md"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=855
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+player1=""
+player3=""
+player2=""
 
 [input]
 

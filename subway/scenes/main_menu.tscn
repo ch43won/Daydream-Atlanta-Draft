@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2u7ta45ik7md"]
+
+[ext_resource type="Script" uid="uid://wl6d2qnj8rc7" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cbgo4qoxewq6" path="res://assets/sketch1759064356883.png" id="2_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://dj8d6f2ft4beh" path="res://buttons/CGB02-purple_L_btn.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://m3vdcepa23ai" path="res://buttons/CGB02-grey_L_btn.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dpinit1745kme" path="res://buttons/purple_hover_button.png" id="4_rtw2f"]
+[ext_resource type="FontFile" uid="uid://bi5h638hf5nrv" path="res://buttons/monogram.ttf" id="6_oa1go"]
+[ext_resource type="PackedScene" uid="uid://c3i8towvtocwe" path="res://scenes/fade_transition.tscn" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://rr4cvid55mg2" path="res://audio/lost without you.mp3" id="8_tbmy8"]
+
+[node name="Main Menu" type="Node2D"]
+position = Vector2(-6, -14)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_l6cm7")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(138.889, 16.6667)
+rotation = -0.00698132
+scale = Vector2(0.300885, 0.298803)
+texture = ExtResource("2_rtw2f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(120, 25.5556)
+scale = Vector2(0.9, 0.9)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -288.889
+offset_top = -187.778
+offset_right = 1024.11
+offset_bottom = 11.2222
+theme_override_colors/font_color = Color(1, 1, 0.92549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 160
+text = "THE LAST TRAIN"
+
+[node name="Button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.9, 0.9)
+metadata/_edit_use_anchors_ = true
+
+[node name="start" type="TextureButton" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391049
+anchor_top = 6.16111
+anchor_right = 0.391049
+anchor_bottom = 6.16111
+offset_left = -107.0
+offset_top = -202.0
+offset_right = 405.0
+offset_bottom = -62.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("2_wu84c")
+texture_pressed = ExtResource("3_8ln24")
+texture_hover = ExtResource("4_rtw2f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Button_manager/start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0209405
+anchor_top = 0.0720067
+anchor_right = 0.0209405
+anchor_bottom = 0.0720067
+offset_left = 126.0
+offset_top = -1.0
+offset_right = 389.0
+offset_bottom = 111.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 140
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="how to" type="TextureButton" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.321913
+anchor_top = 6.17037
+anchor_right = 0.321913
+anchor_bottom = 6.17037
+offset_left = -103.0
+offset_top = -32.0
+offset_right = 409.0
+offset_bottom = 108.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("2_wu84c")
+texture_pressed = ExtResource("3_8ln24")
+texture_hover = ExtResource("4_rtw2f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Button_manager/how to"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0262587
+anchor_top = 0.0357535
+anchor_right = 0.0262587
+anchor_bottom = 0.0357535
+offset_left = 101.0
+offset_top = -1.0
+offset_right = 417.0
+offset_bottom = 111.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 140
+text = "How To"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fade_transition" parent="." instance=ExtResource("7_oa1go")]
+visible = false
+offset_left = -1277.78
+offset_top = -921.111
+offset_right = 1919.22
+offset_bottom = 1461.89
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tbmy8")
+autoplay = true
+parameters/looping = false
+
+[connection signal="pressed" from="Button_manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_manager/how to" to="." method="_on_how_to_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

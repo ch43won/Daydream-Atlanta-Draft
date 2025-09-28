@@ -3,40 +3,47 @@
 [ext_resource type="Script" uid="uid://duye4d1vb4akv" path="res://scripts/button_area.gd" id="1_0jkn0"]
 [ext_resource type="Texture2D" uid="uid://pcfgle14akkl" path="res://assets/button.png" id="2_w555x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dfv78"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jkn0"]
 atlas = ExtResource("2_w555x")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ase0l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w555x"]
 atlas = ExtResource("2_w555x")
 region = Rect2(0, 192, 192, 192)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qgbh5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jrnvt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dfv78")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ase0l")
+"texture": SubResource("AtlasTexture_0jkn0")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w555x")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrnvt"]
-radius = 5.0
-height = 34.0
+radius = 11.0
+height = 46.0
 
-[node name="ButtonArea" type="Area2D"]
+[node name="ButtonArea" type="Area2D" groups=["player1"]]
 script = ExtResource("1_0jkn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -1)
-scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_qgbh5")
+sprite_frames = SubResource("SpriteFrames_jrnvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jrnvt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

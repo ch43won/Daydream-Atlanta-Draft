@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2j0f3ypfsqyc"
+path="res://.godot/imported/distressed - lofi freestyle type beat.mp3-6c01ba97d58dd1ec11f6efa54a98bf0f.mp3str"
+
+[deps]
+
+source_file="res://audio/distressed - lofi freestyle type beat.mp3"
+dest_files=["res://.godot/imported/distressed - lofi freestyle type beat.mp3-6c01ba97d58dd1ec11f6efa54a98bf0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

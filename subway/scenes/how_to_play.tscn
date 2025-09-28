@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://7gs0fam5ah5y"]
+
+[ext_resource type="Script" uid="uid://8j02dfs5gb6g" path="res://scripts/how_to_play.gd" id="1_m8x0n"]
+[ext_resource type="Texture2D" uid="uid://bwisteuhkf6qc" path="res://assets/How to Play (1).png" id="2_m8x0n"]
+[ext_resource type="Texture2D" uid="uid://75o5gnlnema" path="res://buttons/CGB02-purple_S_btn.png" id="3_crhno"]
+[ext_resource type="Texture2D" uid="uid://btlm00ghoco4n" path="res://buttons/CGB02-grey_S_btn.png" id="4_xqkvd"]
+[ext_resource type="Texture2D" uid="uid://dajis3tksptql" path="res://buttons/purple_small_hover.png" id="5_dhu30"]
+[ext_resource type="FontFile" uid="uid://bi5h638hf5nrv" path="res://buttons/monogram.ttf" id="6_nxcge"]
+[ext_resource type="PackedScene" uid="uid://c3i8towvtocwe" path="res://scenes/fade_transition.tscn" id="7_esfgi"]
+[ext_resource type="AudioStream" uid="uid://rr4cvid55mg2" path="res://audio/lost without you.mp3" id="8_crhno"]
+
+[node name="How to play" type="Node2D"]
+script = ExtResource("1_m8x0n")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(-0.999962, 1)
+scale = Vector2(0.853516, 0.859375)
+texture = ExtResource("2_m8x0n")
+
+[node name="back" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = 1.23055
+anchor_top = 3.31389
+anchor_right = 1.23055
+anchor_bottom = 3.31389
+offset_left = -52.0
+offset_top = -55.0
+offset_right = 460.0
+offset_bottom = 85.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("3_crhno")
+texture_pressed = ExtResource("4_xqkvd")
+texture_hover = ExtResource("5_dhu30")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2118
+anchor_top = 0.0909169
+anchor_right = -0.2118
+anchor_bottom = 0.0909169
+offset_left = 126.0
+offset_top = -1.0
+offset_right = 389.0
+offset_bottom = 111.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("6_nxcge")
+theme_override_font_sizes/font_size = 140
+text = "<-"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fade_transition" parent="." instance=ExtResource("7_esfgi")]
+visible = false
+offset_left = -1277.78
+offset_top = -921.111
+offset_right = 1919.22
+offset_bottom = 1461.89
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_crhno")
+autoplay = true
+parameters/looping = false

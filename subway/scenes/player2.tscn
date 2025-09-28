@@ -77,7 +77,7 @@ animations = [{
 radius = 30.25
 height = 98.0
 
-[node name="player2" type="CharacterBody2D"]
+[node name="player2" type="CharacterBody2D" groups=["player1", "player3"]]
 z_index = 5
 script = ExtResource("1_g2brh")
 
