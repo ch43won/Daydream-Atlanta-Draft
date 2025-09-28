@@ -254,14 +254,6 @@ distance = -4204.11
 [node name="Game" type="Node2D"]
 script = ExtResource("1_vtaks")
 
-[node name="under_bg" type="Sprite2D" parent="."]
-position = Vector2(-1557, -1916)
-scale = Vector2(12.2726, 2.72222)
-texture = ExtResource("8_gee14")
-centered = false
-offset = Vector2(0, 748)
-flip_v = true
-
 [node name="Train" parent="." instance=ExtResource("3_rysoc")]
 position = Vector2(4207, -7)
 
@@ -281,7 +273,7 @@ camera1_path = NodePath("../player1/camera1")
 camera2_path = NodePath("../player2/camera2")
 
 [node name="player1" parent="." groups=["player"] instance=ExtResource("1_lnu2h")]
-position = Vector2(-1005, -19)
+position = Vector2(1510, -288)
 scale = Vector2(0.25, 0.25)
 
 [node name="camera1" type="Camera2D" parent="player1"]
@@ -317,6 +309,13 @@ offset_bottom = 281.0
 offset = Vector2(0, -1000)
 scale = Vector2(1.4, 1.4)
 transform = Transform2D(1.4, 0, 0, 1.4, 0, -1000)
+
+[node name="under_bg" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(-1552.86, -7539.29)
+scale = Vector2(12.2726, 9.05487)
+texture = ExtResource("8_gee14")
+centered = false
+offset = Vector2(0, 748)
 
 [node name="layer1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.89, 0.89)
