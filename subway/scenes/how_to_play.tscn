@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://7gs0fam5ah5y"]
 
 [ext_resource type="Script" uid="uid://8j02dfs5gb6g" path="res://scripts/how_to_play.gd" id="1_m8x0n"]
-[ext_resource type="Texture2D" uid="uid://bwisteuhkf6qc" path="res://assets/How to Play (1).png" id="2_m8x0n"]
+[ext_resource type="Texture2D" uid="uid://shbbqcih188r" path="res://assets/How to Play (2).png" id="2_crhno"]
 [ext_resource type="Texture2D" uid="uid://75o5gnlnema" path="res://buttons/CGB02-purple_S_btn.png" id="3_crhno"]
 [ext_resource type="Texture2D" uid="uid://btlm00ghoco4n" path="res://buttons/CGB02-grey_S_btn.png" id="4_xqkvd"]
 [ext_resource type="Texture2D" uid="uid://dajis3tksptql" path="res://buttons/purple_small_hover.png" id="5_dhu30"]
@@ -13,9 +13,9 @@
 script = ExtResource("1_m8x0n")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(-0.999962, 1)
+position = Vector2(2, 1)
 scale = Vector2(0.853516, 0.859375)
-texture = ExtResource("2_m8x0n")
+texture = ExtResource("2_crhno")
 
 [node name="back" type="TextureButton" parent="."]
 anchors_preset = -1
